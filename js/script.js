@@ -1,46 +1,39 @@
 $(document).ready(function(){
-  $("#test").scroll(function(){
-    console.log("TEST");
-    if(document.getElementById("test").scrollTop > 0)
-    {
-      $(".navbar").css("height", "10vh");
-    }
-    else {
+var timeout;
+var wasTop = true;
+  $("#content").scroll(function(){
+    var scrollTop = $("#content").scrollTop();
+    var scrollHeight = document.getElementById("content").scrollHeight - document.getElementById("content").clientHeight;
+
+    if(1 == scrollTop / scrollHeight) {
+      wasTop = true;
       $(".navbar").css("height", "100vh");
+      clearTimeout(timeout);
+      $("#secondaryLanguages").css("display", "inline-block");
+
+      timeout = setTimeout(function(){
+        $("#secondaryLanguages").css("opacity", "1");
+      }, 500);
+    }
+    else if(document.getElementById("content").scrollTop > 0 && wasTop)
+    {
+      wasTop = false;
+      $(".navbar").css("height", "10vh");
+      $("#secondaryLanguages").css("opacity", "0");
+      timeout = setTimeout(function(){
+        $("#secondaryLanguages").css("display", "none");
+      }, 1000);
+    }
+    else if(document.getElementById("content").scrollTop == 0){
+      wasTop = true;
+
+      clearTimeout(timeout)
+
+      $(".navbar").css("height", "100vh");
+      $("#secondaryLanguages").css("display", "inline-block");
+      timeout = setTimeout(function(){
+        $("#secondaryLanguages").css("opacity", "1");
+      }, 500);
     }
   })
 });
-
-//http://stackoverflow.com/questions/18880159/use-jquery-to-check-mousewheel-event-without-scrollbar
-/*  if (document.addEventListener) {
-      document.addEventListener("mousewheel", MouseWheelHandler(), false);
-      document.addEventListener("DOMMouseScroll", MouseWheelHandler(), false);
-  } else {
-      sq.attachEvent("onmousewheel", MouseWheelHandler());
-  }
-
-  function MouseWheelHandler() {
-      return function (e) {
-          // cross-browser wheel delta
-          var e = window.event || e;
-          var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
-
-          //scrolling down?
-          if (delta < 0) {
-            if(document.getElementById("test").scrollTop == 0)
-            {
-              $(".navbar").css("height", "100px");
-            }
-          }
-
-          //scrolling up?
-          else {
-            if(document.getElementById("test").scrollTop == 0)
-            {
-              $(".navbar").css("height", "100vh");
-            }
-          }
-          return false;
-      }
-  }
-*/
