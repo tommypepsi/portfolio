@@ -1,5 +1,54 @@
 $(document).ready(function(){
 
+  function setCookie(cname, cvalue, exdays) {
+      var d = new Date();
+      d.setTime(d.getTime() + (exdays*24*60*60*1000));
+      var expires = "expires="+ d.toUTCString();
+      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
+  function getCookie(cname) {
+      var name = cname + "=";
+      var decodedCookie = decodeURIComponent(document.cookie);
+      var ca = decodedCookie.split(';');
+      for(var i = 0; i <ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0) == ' ') {
+              c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+              return c.substring(name.length, c.length);
+          }
+      }
+      return "";
+  }
+
+  $("#lang").css("top", "10px");
+  if(getCookie("lang") == "fr")
+  {
+    $(".en").css("display", "none");
+    $(".fr").css("display", "inline")
+  }
+  else if(getCookie("lang") == "en")
+  {
+    $(".en").css("display", "inline");
+    $(".fr").css("display", "none")
+  }
+  else {
+    $(".en").css("display", "inline");
+    $(".fr").css("display", "none")
+  }
+
+  $("#fr").click(function() {
+    setCookie("lang", "fr", 365);
+    $(".en").css("display", "none");
+    $(".fr").css("display", "inline")
+  });
+  $("#en").click(function() {
+    setCookie("lang", "en", 365);
+    $(".en").css("display", "inline");
+    $(".fr").css("display", "none")
+  });
+
   //smooth scroll to
   $('.navbar a').click(function() {
     var id = $(this).attr('href');
@@ -19,6 +68,8 @@ var wasTop = true;
     if(1 == scrollTop / scrollHeight) {
       wasTop = true;
 
+      $("#lang").css("top", "");
+      $("#lang").css("bottom", "10px");
       $("#navbar").removeClass("justify-content-center");
       $("form").css("top", "50%");
       $("#nav").addClass("align-self-md-start");
@@ -49,6 +100,8 @@ var wasTop = true;
       clearTimeout(timeout);
       clearTimeout(timeout2);
 
+      $("#lang").css("top", "10px");
+      $("#lang").css("bottom", "");
       $("#navbar").removeClass("justify-content-center");
       $("form").css("top", "150%");
       $(".navbar").css("height", "100px");

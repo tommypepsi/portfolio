@@ -12,30 +12,27 @@
     <title>PORTFOLIO</title>
   </head>
   <body>
+    <div id="lang"><a href="#fr" id="fr">FR</a>/<a href="#en" id="en">EN</a></div>
     <nav class="navbar navbar-toggleable-sm navbar-inverse fixed-bottom d-flex text-center justify-content-center" id="navbar">
-
-      <a href="#about" class="navbar-brand mr-md-auto" id="brand">TOMMY GAUDREAU<br><span id="languages">HTML • CSS • JavaScript • PHP<br></span><span id="secondaryLanguages">JQuery • Bootstrap • Et plus à venir</span></a>
+      <a href="#about" class="navbar-brand mr-md-auto" id="brand">TOMMY GAUDREAU<br><span id="languages">HTML • CSS • JavaScript • PHP<br></span><span id="secondaryLanguages">JQuery • Bootstrap • <span class="fr">Et plus à venir</span><span class="en">And more to come</span></span></a>
       <ul class="navbar-nav flex-row justify-content-around" id="nav">
         <li class="nav-item">
-          <a href="#aboutContent" class="nav-link" id="toAbout">À Propos</a>
+          <a href="#aboutContent" class="nav-link" id="toAbout"><span class="fr">À Propos</span><span class="en">About</span></a>
         </li>
         <li class="nav-item">
-          <a href="#projects" class="nav-link" id="toProjects">Projets</a>
+          <a href="#projects" class="nav-link" id="toProjects"><span class="fr">Projets</span><span class="en">Projects</span></a>
         </li>
         <li class="nav-item">
           <a href="#contact" class="nav-link" id="toContact">Contact</a>
         </li>
       </ul>
-
-
-
     </nav>
 
     <form action="https://formspree.io/n1tommy_pepsi@live.ca" method="POST" class="form">
       <h1>CONTACT</h1>
       <div class="row">
         <div class="form-group col-6">
-          <input type="text" class="form-control" placeholder="Nom" name="name">
+          <input type="text" class="form-control" placeholder="Nom/Name" name="name">
         </div>
 
         <div class="form-group col-6">
@@ -47,27 +44,143 @@
         </div>
       </div>
 
-      <button type="submit" class="btn btn-primary">Send</button>
+      <button type="submit" class="btn btn-primary"><span class="fr">Envoi</span><span class="en">Send</span></button>
     </form>
 
     <div id="content">
+
       <div class="row" id="about">
         <div class="container" id="aboutContent">
           <div class="row">
             <div class="col-sm-3" style="margin:auto;"><img src="img/img.jpg" alt="Me" id="me"><br></div>
             <div class="col-sm-9" style="margin:auto;">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Modi velit neque vero pariatur, facilis, deleniti, odio,
-              commodi tempore praesentium placeat consequuntur non natus
-              doloremque saepe nesciunt. </p>
+              <div class="fr">
+                <p>
+                  Je viens tout juste de terminer ma formation d'étude professionnelle en
+                  soutien informatique. J'avais déjà un intérêt pour le développement web, mais
+                  les cours centrés sur le web(HTML, CSS, PHP, javascript) m'ont confirmé
+                  que c'est ce vers quoi je veux aller.
+                </p>
+                <p>
+                  Je suis présentement à la recherche d'un emploi,
+                  donc si êtes à la recherche d'un personne motivé qui veux faire ses début
+                  dans le domaine, prenez le temps de me contacter via la section "Contact".
+                </p>
+              </div>
+              <div class="en">
+                <p>
+                  I just finished my diploma of professional Studies in Computer support.
+                  I already had an interest in web development, but the classes centered around
+                  the web(HTML, CSS, PHP, javascript) helped me confirm that it's what I
+                  want to do.
+                </p>
+                <p>
+                  I am currently looking for a job, so if you're looking for someone motivated
+                  who wants to make his debut in the field, look at my projects and take the time
+                  to contact me via the "Contact" section.
+                </p>
+              </div>
+            </div>
+            <div class="col-12 d-flex justify-content-around">
+              <a href="https://www.freecodecamp.com/tommypepsi" target="_blank"><i class="fa fa-free-code-camp"></i></a>
+              <a href="https://www.linkedin.com/in/tommy-gaudreau-b50735129/" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+              <a href="https://github.com/tommypepsi" target="_blank"><i class="fa fa-github"></i></a>
             </div>
           </div>
         </div>
       </div>
+
       <div class="row" id="projects">
-        <div class="container"><h1>PROJETS</h1></div>
+          <h1 class="col-12"><span class="fr">PROJETS</span><span class="en">PROJECTS</span></h1>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-12 img">
+              <img src="img/maison3dpro.png" alt="">
+              <a href="http://maison3dpro.com/" target="_blank">
+                <div class="info">
+                  <div class="infoContent">
+                    <span class="fr">
+                      Au cours de ma formation en soutien informatique,
+                      un agent immobilier a fait affaire avec notre école pour avoir un
+                      site internet et c'est moi qui a pris le projet en charge.
+                    </span>
+                    <span class="en">
+                      during my computer support classes, a real estate agent
+                      contacted my school to have a website and I took the
+                      project in charge.
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-12 img">
+              <video loop autoplay>
+                <source src="img/rezero.webm">
+              </video>
+              <a href="https://tommypepsi.github.io/interactiveRezeroPage/" target="_blank">
+                <div class="info">
+                  <div class="infoContent">
+                    <span class="fr">
+                      Projet d'école, le but était simplement de créer une page HTML/CSS et
+                      d'intégré 2 petits javascripts. Ayant déjà de la facilité avec le HTML et CSS j'ai
+                      décidé de me concentré sur le javascript pour faire une page plus intéractive.
+                      <br>(Il faut attendre que la page sois chargé avant d'intéragir)
+                    </span>
+                    <span class="en">
+                      School project, the aim was simply to create an HTML/CSS page and to integrate
+                      2 little javascripts. Already at ease with HTML and CSS I decided to focus on
+                      the javascript to make a more interactive page.
+                      <br>(You have to wait for the page to load before interacting)
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-12 img">
+              <img src="img/whattodraw.png" alt="">
+              <a href="http://whattodraw.tk/" target="_blank">
+                <div class="info">
+                  <div class="infoContent">
+                    <span class="fr">
+                      WhatToDraw est un projet personel. WhatToDraw à pour objectif d'être une communauté
+                      pour artistes dont le but est de s'entraidé à trouvé l'inspiration et de nouvelles
+                      technique de dessins.
+                    </span>
+                    <span class="en">
+                      WhatToDraw is a personal project. WhatToDraw aims to be a community for
+                      artists whose goal is to help each other find inspiration and new drawing techniques.
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-12 img">
+              <img src="img/fullmetal.png" alt="">
+              <a href="https://tommypepsi.github.io/Tribute/" target="_blank">
+                <div class="info">
+                  <div class="infoContent">
+                    <span class="fr">
+                      J'ai récemment commencé à suivre la formation de Free Code Camp
+                      dont le but est d'apprendre les principaux outils du développement
+                      web. Ceci est le premier projet de cette formation.<br>
+                      (Ce portfolio fait aussi partis des projets de la formation)
+                    </span>
+                    <span class="en">
+                      I recently started the Free Code Camp course which aim is to learn
+                      the main tools of web development. This is the first project
+                      of this course.<br>
+                      (This portfolio is also part of the course projects)
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="row" id="contact">a</div>
+
+      <div class="row" id="contact"></div>
     </div>
 
   </body>

@@ -29,6 +29,19 @@
   color: rgb(124, 4, 4);
   font-size: 15px;
 }
+#lang{
+  position: absolute;
+  right: 20px;
+  transition: all 1s;
+  z-index: 100000;
+}
+
+#lang{
+  color: rgb(12, 117, 216);
+}
+.en, .fr{
+  display: none;
+}
 
 
 /*content*/
@@ -65,6 +78,14 @@
   width:100%;
   border-radius:50%;
 }
+#about i{
+  margin-top:50px;
+  font-size: 30px;
+  color:white;
+}
+#about i:hover{
+  color: grey;
+}
 
 /*projects section*/
 #projects{
@@ -73,8 +94,58 @@
   color:black;
   font-weight: bold !important;
   background-color: white;
-  height:150vh;
+  padding-bottom: 200px;
+  min-height: 120vh;
 }
+#projects h1{
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+#projects img, #projects video, #projects .info{
+  width: 100%;
+}
+#projects .img{
+  margin-bottom: 50px;
+}
+
+#projects .info{
+  display: table-cell;
+  width: 100%;
+  height:100%;
+  background: rgba(255,0,0,0);
+	position:absolute;
+  padding: 20px;
+	top: 0;
+  left:0;
+	-webkit-transition: all 500ms;
+	-ms-transition: all 500ms;
+	transition: all 500ms;
+  color:rgba(67,67,67,0);
+  font-size: 20px;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari*/
+   -khtml-user-select: none; /* Konqueror */
+     -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+#projects .info:hover{
+	background:rgba(159, 0, 0, 0.8);
+  color: white;
+}
+#projects .infoContent{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  font-size: 20px;
+}
+
 
 /*Form*/
 form{
