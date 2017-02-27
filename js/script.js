@@ -34,8 +34,8 @@ $(document).ready(function(){
     $(".fr").css("display", "none")
   }
   else {
-    $(".en").css("display", "inline");
-    $(".fr").css("display", "none")
+    $(".en").css("display", "none");
+    $(".fr").css("display", "inline")
   }
 
   $("#fr").click(function() {
